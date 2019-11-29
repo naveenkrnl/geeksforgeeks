@@ -1,17 +1,15 @@
 from django.shortcuts import render
 from .forms import GeeksForm
 
-def handle_uploaded_file(f):  
-    with open('geeks/upload/'+f.name, 'wb+') as destination:  
-        for chunk in f.chunks():
-            destination.write(chunk)  
 # Create your views here.
 def home_view(request):
-    context={}
-    if request.POST:
-        form=GeeksForm(request.POST)
-        print(request.POST)
+    context ={}
+    if request.method=="POST":
+        form = GeeksForm(request.POST)
+        if form.is_valid():
+            temp=form.cleaned_data.get("geeks_field")
+            print(type(temp))
     else:
         form=GeeksForm()
     context['form']=form
-    return render(request,"home.html",context)
+    return render(request, "home.html", context)
