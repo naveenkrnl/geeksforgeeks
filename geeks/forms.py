@@ -2,5 +2,6 @@ from django import forms
 
 
 class GeeksForm(forms.Form):
-    geeks_field         = forms.FloatField()
+    name                = forms.CharField()
+    geeks_field         = forms.ImageField()
     
