@@ -10,5 +10,5 @@ def home_view(request):
     if request.POST:
         if form.is_valid():
             temp=form.cleaned_data.get("geeks_field")
-            print(type(temp))
+            print(temp)
     return render(request, "home.html", context)
