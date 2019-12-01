@@ -6,6 +6,6 @@ DEMO_CHOICES=(
     ("3","Isha"),
     ("4","Saloni"),
 )
+
 class GeeksForm(forms.Form):
-    geeks_field         = forms.MultipleChoiceField(choices=DEMO_CHOICES)
-    
+    geeks_field         = forms.TypedMultipleChoiceField(choices=DEMO_CHOICES,coerce=int)
