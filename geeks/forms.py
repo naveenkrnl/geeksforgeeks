@@ -8,4 +8,4 @@ DEMO_CHOICES=(
 )
 
 class GeeksForm(forms.Form):
-    geeks_field         = forms.TypedMultipleChoiceField(choices=DEMO_CHOICES,coerce=int)
+    geeks_field         = forms.NullBooleanField()
