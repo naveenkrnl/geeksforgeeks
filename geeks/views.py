@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from .forms import GeeksForm
-from .models import GeeksModel
 
 # Create your views here.
 def home_view(request):
@@ -10,5 +9,5 @@ def home_view(request):
     if request.POST:
         if form.is_valid():
             temp=form.cleaned_data.get("geeks_field")
-            print(type(temp))
+            print(temp)
     return render(request, "home.html", context)
