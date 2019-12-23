@@ -1,4 +1,9 @@
 from django import forms
 
 class GeeksForm(forms.Form):
-    geeks_field         = forms.CharField(help_text="Enter your Name")
+    title         = forms.CharField(initial = "Method 2 ")
+    description   = forms.CharField(initial = "Method 2 description")
+    available     = forms.BooleanField(initial = True)
+    email         = forms.EmailField(initial = "abc@gmail.com")
+
+
