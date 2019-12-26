@@ -1,7 +1,12 @@
+# import form class from django
 from django import forms
 
-class GeeksForm(forms.Form):
-    title         =  forms.CharField()
-    description   =  forms.CharField()
-    views         =  forms.IntegerField()
-    date          =  forms.DateField(widget=forms.SelectDateWidget)
+# import GeeksModel from models.py
+from .models import GeeksModel
+
+# create a ModelForm
+class GeeksForm(forms.ModelForm):
+    # specify the name of model to use
+    class Meta:
+        model=GeeksModel
+        fields = "__all__"
