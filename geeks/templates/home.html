@@ -1,5 +1,13 @@
 <form method="POST" enctype="multipart/form-data">
+    
+    <!-- Management data of formset -->
+    {{ formset.management_data }}
+
+    <!-- Security token -->
     {% csrf_token %}
-    {{ form.as_p }}
+
+    <!-- Using the formset -->
+    {{ formset.as_p }}
+    
     <input type="submit" value="Submit">
 </form>

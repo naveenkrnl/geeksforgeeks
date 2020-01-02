@@ -1,19 +1,25 @@
-
 from django.shortcuts import render
+
+# relative import of forms
 from .forms import GeeksForm
 
-def home_view(request):
+# importing formset_factory
+from django.forms import formset_factory
+
+def formset_view(request):
     context ={}
 
-    # create object of form
-    form = GeeksForm(request.POST or None, request.FILES or None)
+    # creating a formset and 5 instances of GeeksForm
+    GeeksFormSet = formset_factory(GeeksForm, extra = 3)
+    formset = GeeksFormSet(request.POST or None)
     
-    # check if form data is valid
-    if form.is_valid():
-        # save the form data to model
-        form.save()
-
-    context['form']= form
+    # print formset data if it is valid
+    if formset.is_valid():
+        for form in formset:
+            print(form.cleaned_data)
+            
+    # Add the formset to context dictionary
+    context['formset']= formset
     return render(request, "home.html", context)
 
 
