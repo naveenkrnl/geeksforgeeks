@@ -1,8 +1,8 @@
 from django.urls import path
 
 # importing views from views..py
-from .views import home_view
+from .views import formset_view
 
 urlpatterns = [
-    path('', home_view ),
+    path('', formset_view ),
 ]

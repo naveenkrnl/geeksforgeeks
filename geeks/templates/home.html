@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html>
 
 <body>
@@ -11,3 +12,18 @@
 </body>
 
 </html>
+=======
+<form method="POST" enctype="multipart/form-data">
+    
+    <!-- Management data of formset -->
+    {{ formset.management_data }}
+
+    <!-- Security token -->
+    {% csrf_token %}
+
+    <!-- Using the formset -->
+    {{ formset.as_p }}
+    
+    <input type="submit" value="Submit">
+</form>
+>>>>>>> f777a26cbd66f7a203bad6744fcf646d8e8ba0df
