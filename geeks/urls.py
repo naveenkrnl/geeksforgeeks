@@ -1,8 +1,8 @@
 from django.urls import path
 
 # importing views from views..py
-from .views import modelformset_view
+from .views import update_view
 
 urlpatterns = [
-    path('', modelformset_view ),
+    path('<id>/update', update_view ),
 ]

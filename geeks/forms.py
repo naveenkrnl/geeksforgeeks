@@ -1,13 +1,17 @@
 from django import forms
-<<<<<<< HEAD
- 
-# creating a form 
-class InputForm(forms.Form):
-    first_name = forms.CharField(max_length = 200)
-    img = forms.FileField()
-=======
+from .models import GeeksModel
 
-class GeeksForm(forms.Form):
-    title         = forms.CharField()
-    description   = forms.CharField()
->>>>>>> f777a26cbd66f7a203bad6744fcf646d8e8ba0df
+
+# creating a form
+class GeeksForm(forms.ModelForm):
+
+    # create meta class
+    class Meta:
+        # specify model to be used
+        model = GeeksModel
+
+        # specify fields to be used
+        fields = [
+            "title",
+            "description",
+        ]
