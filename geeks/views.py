@@ -1,23 +1,11 @@
-from django.shortcuts import get_object_or_404,render ,HttpResponseRedirect
-
+from django.views.generic.edit import CreateView
 from .models import GeeksModel
 
+class GeeksCreate(CreateView):
 
-# delete view for details
-def delete_view(request,id):
-    # dictionary for initial data with 
-    # field names as keys
-    context ={}
+    # specify the model for create view
+    model = GeeksModel
 
-    # fetch the object related to passed id
-    obj = get_object_or_404(GeeksModel, id=id)
+    # specify the fields to be displayed
 
-
-    if request.method=="POST":
-        # delete object
-        obj.delete()
-        # after deleting redirect to 
-        # home page
-        return HttpResponseRedirect("/")
-
-    return render(request, "delete_view.html", context)
+    fields = ['title','description']

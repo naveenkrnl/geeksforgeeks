@@ -1,7 +1,7 @@
 from django.urls import path
 
 # importing views from views..py
-from .views import delete_view
+from .views import GeeksCreate
 urlpatterns = [
-    path('<id>/delete', delete_view ),
+    path('create/', GeeksCreate.as_view() ),
 ]
