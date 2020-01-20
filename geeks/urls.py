@@ -1,7 +1,7 @@
 from django.urls import path
 
 # importing views from views..py
-from .views import GeeksList
+from .views import GeeksUpdateView
 urlpatterns = [
-    path('', GeeksList.as_view()),
+    path('<pk>/update', GeeksUpdateView.as_view()),
 ]

@@ -1,12 +1,20 @@
-from django.views.generic.list import ListView
+# import generic UpdateView
+from django.views.generic.edit import UpdateView
+
+# Relative import of GeeksModel
 from .models import GeeksModel
 
-class GeeksList(ListView):
-
-    # specify the model for list view
+class GeeksUpdateView(UpdateView):
+    # specify the model you want to use
     model = GeeksModel
 
-    def get_queryset(self, *args, **kwargs):
-        qs=super(GeeksList,self).get_queryset(*args,**kwargs)
-        qs=qs.order_by("-id")
-        return qs
+    # specify the fields
+    fields = [
+        "title",
+        "description"
+    ]
+
+    # can specify success url
+    # url to redirect after sucessfully
+    # updating details
+    success_url="/"
