@@ -1,7 +1,7 @@
 from django.urls import path
 
 # importing views from views..py
-from .views import GeeksCreate
+from .views import GeeksList
 urlpatterns = [
-    path('create/', GeeksCreate.as_view() ),
+    path('', GeeksList.as_view()),
 ]

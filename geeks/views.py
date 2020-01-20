@@ -1,11 +1,12 @@
-from django.views.generic.edit import CreateView
+from django.views.generic.list import ListView
 from .models import GeeksModel
 
-class GeeksCreate(CreateView):
+class GeeksList(ListView):
 
-    # specify the model for create view
+    # specify the model for list view
     model = GeeksModel
 
-    # specify the fields to be displayed
-
-    fields = ['title','description']
+    def get_queryset(self, *args, **kwargs):
+        qs=super(GeeksList,self).get_queryset(*args,**kwargs)
+        qs=qs.order_by("-id")
+        return qs
