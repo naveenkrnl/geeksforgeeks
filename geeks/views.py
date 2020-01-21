@@ -1,19 +1,13 @@
 # import generic UpdateView
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import DeleteView
 
 # Relative import of GeeksModel
 from .models import GeeksModel
 
-class GeeksUpdateView(UpdateView):
+class GeeksDeleteView(DeleteView):
     # specify the model you want to use
     model = GeeksModel
-
-    # specify the fields
-    fields = [
-        "title",
-        "description"
-    ]
-
+    
     # can specify success url
     # url to redirect after sucessfully
     # updating details
