@@ -1,7 +1,8 @@
 from django.urls import path
 
 # importing views from views..py
-from .views import GeeksDeleteView
+from .views import geeks_view
+
 urlpatterns = [
-    path('<pk>/delete', GeeksDeleteView.as_view()),
+    path('', geeks_view),
 ]

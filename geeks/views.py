@@ -1,14 +1,11 @@
-# import generic UpdateView
-from django.views.generic.edit import DeleteView
+# import Http Response from django
+from django.shortcuts import render
 
-# Relative import of GeeksModel
-from .models import GeeksModel
-
-class GeeksDeleteView(DeleteView):
-    # specify the model you want to use
-    model = GeeksModel
-    
-    # can specify success url
-    # url to redirect after sucessfully
-    # updating details
-    success_url="/"
+# create a function
+def geeks_view(request):
+    # create a dictionary
+    context = {
+        "data" : [1,2,3,4,5,6,7,8,9,10],
+    }
+    # return response
+    return render(request,"geeks.html",context)
