@@ -1,3 +1,18 @@
-<h1>Template 1</h1>
-<!-- Link to template 2 -->
-<a href = "{% url 'template2' %}">Go to template 2</a>
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <title>Homepage</title> 
+</head> 
+<body> 
+    <h1>Welcome to Geeksforgeeks.</h1> 
+    <p> Data  is {{  data }}</p>
+    <h4>List is </h4>
+    <ul>
+    {% for i in list %}
+    <li>{{ i }}</li>
+    {% endfor %}
+</body> 
+</html> 
